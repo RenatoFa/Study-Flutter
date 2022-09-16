@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:ola_mundo/home_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -45,7 +46,16 @@ class _LoginPageState extends State<LoginPage> {
                 const SizedBox(
                   height: 15,
                 ),
-                ElevatedButton(onPressed: () {}, child: const Text('Entrar'))
+                ElevatedButton(
+                    onPressed: () {
+                      if (email == 'renato.v6@hotmail.com' &&
+                          password == '123') {
+                        print('correto');
+                        Navigator.of(context).push(MaterialPageRoute(
+                            builder: (context) => const HomePage()));
+                      }
+                    },
+                    child: const Text('Entrar'))
               ],
             ),
           )),
