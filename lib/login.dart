@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:ola_mundo/home_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -24,6 +23,10 @@ class _LoginPageState extends State<LoginPage> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Image.asset('assets/images/patolino.webp'),
+                Container(
+                  height: 20,
+                ),
                 TextField(
                   onChanged: (text) {
                     email = text;
@@ -51,8 +54,7 @@ class _LoginPageState extends State<LoginPage> {
                       if (email == 'renato.v6@hotmail.com' &&
                           password == '123') {
                         print('correto');
-                        Navigator.of(context).push(MaterialPageRoute(
-                            builder: (context) => const HomePage()));
+                        Navigator.of(context).pushNamed('/home');
                       }
                     },
                     child: const Text('Entrar'))
